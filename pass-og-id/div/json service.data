@@ -1,0 +1,46 @@
+json service
+curl https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/services
+
+###########
+
+[{
+    "additionalDuration": 5,
+    "custom": "{\"names\":{\"nb\":\"Kun ID-kort\",\"en\":\"Only ID-card\"}}",
+    "duration": 10,
+    "internalId": 9,
+    "name": "Kun ID-kort",
+    "publicId": "8e859bd4c1752249665bf2363ea231e1678dbb7fc4decff862d9d41975a9a95a",
+    "qpId": "6"
+}, {
+    "additionalDuration": 5,
+    "custom": "{\"cost\":{\"adult\":{\"default\":\"\"},\"child\":{\"default\":\"\"}},\"names\":{\"nb\":\"Kun  pass\",\"en\":\"Only passport\"}}",
+    "duration": 10,
+    "internalId": 1,
+    "name": "Kun Pass",
+    "publicId": "d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098",
+    "qpId": "2"
+}]
+
+"""""""""
+
+json alle steder
+curl https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branchGroups;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098
+
+dates
+curl https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/a5cb8090ab3cadc95b8e94fc2f90c7700e391b9fc0d2a1a31cbd54157d86eff1/dates;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10
+
+[{
+    "date": "2022-06-16"
+}, {
+    "date": "2022-07-01"
+}, {
+    "date": "2022-07-04"
+},
+
+times
+https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/a5cb8090ab3cadc95b8e94fc2f90c7700e391b9fc0d2a1a31cbd54157d86eff1/dates/2022-08-03/times;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10
+
+[{
+    "date": "2022-06-16",
+    "time": "14:00"
+}]

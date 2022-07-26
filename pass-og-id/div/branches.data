@@ -1,0 +1,76 @@
+# Branches
+
+import requests
+
+branches_url = "https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10"
+branches = requests.get(url)
+print(branches.status_code)
+
+
+# Dates
+
+
+for id in branches
+	dates_url = "https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/" + %id + "dates;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10"
+	dates_result = requests.get(dates_url)
+
+	for date in dates_result
+		times_url = "https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/" + %id + "dates/" + %date + ";servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10"
+		times_result = requests.get(times_url)
+
+
+sett dette sammen til en json fil
+id
+	date
+	time
+	...
+id
+	date
+	time
+	...
+
+
+dates_url = "https://pass-og-id.politiet.no/qmaticwebbooking/rest/schedule/branches/87b817ccaa51b6f29256aeb0a1ab883b47e6a08434ebf8813b4e61d413e5199c/dates;servicePublicId=d1b043c75655a6756852ba9892255243c08688a071e3b58b64c892524f58d098;customSlotLength=10"
+dates_result = requests.get(dates_url)
+
+print(dates_result.status_code)
+
+
+
+[{
+    "date": "2022-07-18",
+    "time": "08:30"
+}, {
+    "date": "2022-07-18",
+    "time": "08:45"
+}, {
+    "date": "2022-07-18",
+    "time": "09:00"
+}, {
+    "date": "2022-07-18",
+    "time": "09:45"
+}, {
+    "date": "2022-07-18",
+    "time": "10:00"
+}, {
+    "date": "2022-07-18",
+    "time": "10:15"
+}, {
+    "date": "2022-07-18",
+    "time": "10:30"
+}, {
+    "date": "2022-07-18",
+    "time": "10:45"
+}, {
+    "date": "2022-07-18",
+    "time": "13:30"
+}, {
+    "date": "2022-07-18",
+    "time": "13:45"
+}]
+
+[{
+    "date": "2022-07-20",
+    "time": "09:00"
+}]
+
